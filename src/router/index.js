@@ -28,7 +28,7 @@ const routes = [
   },
   {
     path: "/panama",
-    name: "jamaica",
+    name: "panama",
     component: PanamaView,
   },
   {
