@@ -8,6 +8,7 @@
         >vue-cli documentation</a
       >.
     </p>
+    <p>Vue app initialized</p>
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li>
