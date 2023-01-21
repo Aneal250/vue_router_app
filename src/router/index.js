@@ -12,6 +12,7 @@ const routes = [
     name: "destination.show",
     component: () =>
       import(/*  webpackChunkName: "panama" */ "../views/DestinationView.vue"),
+    props: (route) => ({ id: parseInt(route.params.id) }),
   },
 ];
 
