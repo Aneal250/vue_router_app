@@ -17,8 +17,8 @@
           params: { experienceSlug: experience.slug },
         }"
       >
+        <ExperienceCard :experience="experience" />
       </router-link>
-      <ExperienceCard :experience="experience" />
     </div>
   </section>
 </template>
