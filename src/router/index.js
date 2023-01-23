@@ -46,6 +46,14 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    return (
+      savedPosition ||
+      new Promise((resolve) => {
+        setInterval(() => resolve({ top: 0, behavior: "smooth" }), 3000);
+      })
+    );
+  },
 });
 
 export default router;
