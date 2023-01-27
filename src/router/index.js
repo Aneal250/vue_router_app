@@ -9,6 +9,19 @@ const routes = [
     component: HomeView,
   },
   {
+    path: "/protected",
+    name: "protected",
+    component: () => import("@/views/ProtectedView.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: () => import("@/views/LoginView.vue"),
+  },
+  {
     path: "/destination/:id/:slug",
     name: "destination.show",
     component: () =>
@@ -54,6 +67,13 @@ const router = createRouter({
       })
     );
   },
+});
+/* eslint-disable */
+router.beforeEach((to, from) => {
+  if (to.meta.requiresAuth && window.user) {
+    // needs to Login if not Already logged In
+    return { name: "login" };
+  }
 });
 
 export default router;
